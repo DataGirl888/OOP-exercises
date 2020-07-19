@@ -16,7 +16,7 @@ public class Book {
     private String genre;
 
     private static int countBooks;
-    private static String[] booksArray;
+    private static Book[] booksArray = new Book[] {};
 
     //constructors
     //no arg constructor
@@ -118,24 +118,49 @@ public class Book {
         Book.countBooks = countBooks;
     }
 
-    public static String[] getBooksArray() {
+    public static Book[] getBooksArray() {
         return booksArray;
     }
 
-    public static void setBooksArray(String[] booksArray) {
+    public static void setBooksArray(Book[] booksArray) {
         Book.booksArray = booksArray;
+    }
+    //toString()
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookID=" + bookID +
+                ", bookTitle='" + bookTitle + '\'' +
+                ", authorFirstName='" + authorFirstName + '\'' +
+                ", authorSurName='" + authorSurName + '\'' +
+                ", publicationDate='" + publicationDate + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", language='" + language + '\'' +
+                ", genre='" + genre + '\'' +
+                '}';
     }
 
     //main
     public static void main(String[] args) {
+
     Book heartOfDarkness = new Book("Heart of Darkness","Joseph","Conrad");
     Book potterPhoenix = new Book("Harry Potter and the Order of the Phoenix", "Rowling");
-    Book thankYouJeaves = new Book("Thank you, Jeaves","P.G.","Wodehouse");
+    Book thankYouJeeves = new Book("Thank you, Jeeves","P.G.","Wodehouse");
     Book deepWork = new Book("Deep Work","Cal","Newport");
     Book getItDone = new Book("Get It Done!","David","Allen","Productivity");
+    booksArray = new Book[] {heartOfDarkness, potterPhoenix, thankYouJeeves, deepWork, getItDone};
+    setBooksArray(booksArray);
+
+        System.out.println(heartOfDarkness);
     }
     //methods
-
+public static void createBooks(){
+    Book heartOfDarkness = new Book("Heart of Darkness","Joseph","Conrad");
+    Book potterPhoenix = new Book("Harry Potter and the Order of the Phoenix", "Rowling");
+    Book thankYouJeeves = new Book("Thank you, Jeeves","P.G.","Wodehouse");
+    Book deepWork = new Book("Deep Work","Cal","Newport");
+    Book getItDone = new Book("Get It Done!","David","Allen","Productivity");
+}
     public static void findBookAuthor(){   //
 
     }

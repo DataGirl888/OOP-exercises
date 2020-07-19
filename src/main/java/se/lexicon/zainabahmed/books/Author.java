@@ -2,6 +2,8 @@ package se.lexicon.zainabahmed.books;
 
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
+import java.util.Arrays;
+
 public class Author {
 //OOP EXERCISE 3.
 //Each book has only one author
@@ -12,7 +14,7 @@ public class Author {
     private String surName;
     private String genre;
     private int booksWritten;
-    private String [] publicationList;
+    private Book [] publicationList;
 
     private static String [] authorsArray;
     private static int countAuthors;
@@ -44,7 +46,7 @@ public class Author {
         this.surName = surName;
         this.genre = genre;
         this.booksWritten = booksWritten;
-        
+
     }
     //getters and setters
 
@@ -88,20 +90,13 @@ public class Author {
         this.booksWritten = booksWritten;
     }
 
-    public String[] getPublicationList() {
+
+    public Book[] getPublicationList() {
         return publicationList;
     }
 
-    public void setPublicationList(String[] publicationList) {
+    public void setPublicationList(Book[] publicationList) {
         this.publicationList = publicationList;
-    }
-
-    public static String[] getAuthorsArray() {
-        return authorsArray;
-    }
-
-    public static void setAuthorsArray(String[] authorsArray) {
-        Author.authorsArray = authorsArray;
     }
 
     public static int getCountAuthors() {
@@ -110,6 +105,18 @@ public class Author {
 
     public static void setCountAuthors(int countAuthors) {
         Author.countAuthors = countAuthors;
+    }
+    //toString
+    @Override
+    public String toString() {
+        return "Author{" +
+                "authorID=" + authorID +
+                ", foreName='" + foreName + '\'' +
+                ", surName='" + surName + '\'' +
+                ", genre='" + genre + '\'' +
+                ", booksWritten=" + booksWritten +
+                ", publicationList=" + Arrays.toString(publicationList) +
+                '}';
     }
 
     //main
