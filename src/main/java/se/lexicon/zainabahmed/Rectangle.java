@@ -3,6 +3,8 @@ package se.lexicon.zainabahmed;
 public class Rectangle {
     private double height,
                     width;
+
+    //constructors
     public Rectangle(){
     this(2.5,3.5);
     }
